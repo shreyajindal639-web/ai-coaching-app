@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Lesson Summary and Reflection Coach</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace">
+      <form id="lessonForm" class="input-panel">
+        <div class="title-block">
+          <p class="eyebrow">GenAI Training Assignment</p>
+          <h1>AI Lesson Summary and Reflection Coach</h1>
+        </div>
+
+        <label for="lessonTitle">Lesson title</label>
+        <input
+          id="lessonTitle"
+          name="lessonTitle"
+          type="text"
+          placeholder="Data Privacy in Generative AI Applications"
+          required
+        />
+
+        <label for="outputStyle">Preferred output style</label>
+        <select id="outputStyle" name="outputStyle">
+          <option value="summary">Summary</option>
+          <option value="exam revision">Exam revision</option>
+          <option value="workplace application">Workplace application</option>
+          <option value="reflection-based learning">Reflection-based learning</option>
+        </select>
+
+        <label for="rawNotes">Raw lesson notes</label>
+        <textarea
+          id="rawNotes"
+          name="rawNotes"
+          rows="14"
+          placeholder="Paste lesson notes here..."
+          required
+        ></textarea>
+
+        <button id="generateBtn" type="submit">
+          <span class="button-text">Generate study output</span>
+          <span class="loader" aria-hidden="true"></span>
+        </button>
+
+        <p id="errorMessage" class="error-message" role="alert"></p>
+      </form>
+
+      <section class="output-panel" aria-live="polite">
+        <div id="emptyState" class="empty-state">
+          <h2>Your structured learning output will appear here</h2>
+          <p>Paste lesson notes, choose a learning style, and generate a revision-ready coaching artifact.</p>
+        </div>
+
+        <article id="resultCard" class="result-card hidden">
+          <section>
+            <h2>Short Summary</h2>
+            <p id="shortSummary"></p>
+          </section>
+
+          <section>
+            <h2>Key Concepts</h2>
+            <div id="keyConcepts" class="concept-list"></div>
+          </section>
+
+          <section>
+            <h2>Common Misunderstandings</h2>
+            <ul id="misunderstandings"></ul>
+          </section>
+
+          <section>
+            <h2>Reflection Questions</h2>
+            <ul id="reflectionQuestions"></ul>
+          </section>
+
+          <section>
+            <h2>Mini Practice Activity</h2>
+            <p id="practiceActivity"></p>
+          </section>
+
+          <section>
+            <h2>Final Takeaway</h2>
+            <p id="finalTakeaway" class="takeaway"></p>
+          </section>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
